@@ -11,33 +11,21 @@ func HowLongIsSubstring(data string) int {
 			if _, ok := letters[string(data[i])]; !ok {
 				letters[string(data[i])] += 1
 				prevLetter = string(data[i])
-				length = 0
-				for _, value := range letters {
-					length += value
-				}
+				lengthRefresh(&length, letters)
 			} else {
 				letters[string(data[i])] += 1
 				prevLetter = string(data[i])
-				length = 0
-				for _, value := range letters {
-					length += value
-				}
+				lengthRefresh(&length, letters)
 			}
 		} else {
 			if _, ok := letters[string(data[i])]; !ok {
-				length = 0
-				for _, value := range letters {
-					length += value
-				}
+				lengthRefresh(&length, letters)
 				letters = make(map[string]int)
 				letters[prevLetter] = 1
 				letters[string(data[i])] += 1
 				prevLetter = string(data[i])
 			} else {
-				length = 0
-				for _, value := range letters {
-					length += value
-				}
+				lengthRefresh(&length, letters)
 				letters[string(data[i])] += 1
 				prevLetter = string(data[i])
 			}
