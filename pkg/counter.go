@@ -8,15 +8,9 @@ func HowLongIsSubstring(data string) int {
 
 	for i := 0; i < len(data); i++ {
 		if len(letters) < 2 {
-			if _, ok := letters[string(data[i])]; !ok {
-				letters[string(data[i])] += 1
-				prevLetter = string(data[i])
-				lengthRefresh(&length, letters)
-			} else {
-				letters[string(data[i])] += 1
-				prevLetter = string(data[i])
-				lengthRefresh(&length, letters)
-			}
+			letters[string(data[i])] += 1
+			prevLetter = string(data[i])
+			lengthRefresh(&length, letters)
 		} else {
 			if _, ok := letters[string(data[i])]; !ok {
 				lengthRefresh(&length, letters)
