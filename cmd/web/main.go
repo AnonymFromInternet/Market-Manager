@@ -8,5 +8,5 @@ import (
 func main() {
 	data := "abaccab"
 	substringLength := pkg.HowLongIsSubstring(data)
-	fmt.Println(fmt.Sprintf("Length of substring is %d", substringLength))
+	fmt.Println(fmt.Sprintf("Length of the substring is %d", substringLength))
 }
